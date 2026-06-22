@@ -1,6 +1,61 @@
 <?php
+require_once __DIR__ . '/config.php';
+
 $assetBase = $assetBase ?? '';
-$mobileActive = $mobileActive ?? 'index';
+$activePage = $activePage ?? ($mobileActive ?? 'index');
+$brand = $siteConfig['brand'];
+$contact = $siteConfig['contact'];
+$mobileNav = $siteConfig['mobile_nav'];
+$footerColumns = $siteConfig['footer_columns'];
+$footer = $siteConfig['footer'];
+
+if (!function_exists('asset_url')) {
+    function asset_url(string $assetBase, string $path): string
+    {
+        return htmlspecialchars($assetBase . $path, ENT_QUOTES, 'UTF-8');
+    }
+}
+
+if (!function_exists('h')) {
+    function h(string $value): string
+    {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
+}
 ?>
-<nav class="mobilebar"><a class="active" href="<?= $assetBase ?>index.php"><span>⌂</span>Inicio</a><a href="<?= $assetBase ?>alojamientos.php"><span>▣</span>Alojar</a><a href="<?= $assetBase ?>restaurantes.php"><span>☕</span>Comer</a><a href="<?= $assetBase ?>publicar-negocio.php"><span>+</span>Publicar</a></nav>
-<a aria-label="Contactar por WhatsApp" class="whatsapp-float" href="https://wa.me/56900000000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Saltos%20del%20Laja%20Tur%C3%ADstico" rel="noopener" target="_blank"><span class="wa-dot">☏</span><span><small>Consulta directa</small><strong>WhatsApp</strong></span></a><footer class="footer"><div class="container footer-grid"><div><a class="brand brand-official" href="<?= $assetBase ?>index.php"><img alt="Saltos del Laja Turístico" decoding="async" height="260" loading="lazy" src="<?= $assetBase ?>assets/img/logo-header-saltos-del-laja.png" width="900"/></a><p>Guía turística para promover alojamientos, restaurantes, emprendimientos, experiencias y lugares para visitar en Saltos del Laja, Región del Biobío.</p></div><div><h4>Turismo</h4><a href="<?= $assetBase ?>lugares-para-visitar.php">Lugares para visitar</a><a href="<?= $assetBase ?>alojamientos.php">Alojamientos</a><a href="<?= $assetBase ?>restaurantes.php">Restaurantes</a><a href="<?= $assetBase ?>mapa-turistico.php">Mapa turístico</a></div><div><h4>Negocios locales</h4><a href="<?= $assetBase ?>publicar-negocio.php">Registrar negocio</a><a href="<?= $assetBase ?>planes.php">Planes comerciales</a><a href="<?= $assetBase ?>ficha-negocio.php">Ejemplo de ficha</a><a href="<?= $assetBase ?>contacto.php">Contacto</a></div><div><h4>Información</h4><a href="<?= $assetBase ?>blog.php">Blog turístico</a><a href="<?= $assetBase ?>blog/que-hacer-en-saltos-del-laja.php">Qué hacer</a><a href="<?= $assetBase ?>blog/donde-alojar-en-saltos-del-laja.php">Dónde alojar</a><a href="<?= $assetBase ?>fuentes.php">Fuentes</a></div></div><div class="container bottom"><span>© 2026 Saltos del Laja Turístico.</span><span>SEO local, diseño móvil y conversión por WhatsApp.</span></div></footer><script src="<?= $assetBase ?>assets/js/main.js"></script></body></html>
+<nav class="mobilebar" aria-label="Menú móvil">
+    <?php foreach ($mobileNav as $key => $item): ?>
+        <a<?= $activePage === $key ? ' class="active"' : '' ?> href="<?= asset_url($assetBase, $item['href']) ?>">
+            <span><?= h($item['icon']) ?></span><?= h($item['label']) ?>
+        </a>
+    <?php endforeach; ?>
+</nav>
+<a aria-label="Contactar por WhatsApp" class="whatsapp-float" href="<?= h($contact['whatsapp_url']) ?>" rel="noopener" target="_blank">
+    <span class="wa-dot">☏</span>
+    <span><small>Consulta directa</small><strong>WhatsApp</strong></span>
+</a>
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <a class="brand brand-official" href="<?= asset_url($assetBase, 'index.php') ?>">
+                <img alt="<?= h($brand['logo_alt']) ?>" decoding="async" height="260" loading="lazy" src="<?= asset_url($assetBase, $brand['logo']) ?>" width="900" />
+            </a>
+            <p><?= h($footer['description']) ?></p>
+        </div>
+        <?php foreach ($footerColumns as $title => $links): ?>
+            <div>
+                <h4><?= h($title) ?></h4>
+                <?php foreach ($links as $link): ?>
+                    <a href="<?= asset_url($assetBase, $link['href']) ?>"><?= h($link['label']) ?></a>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="container bottom">
+        <span><?= h($footer['copyright']) ?></span>
+        <span><?= h($footer['tagline']) ?></span>
+    </div>
+</footer>
+<script src="<?= asset_url($assetBase, 'assets/js/main.js') ?>"></script>
+</body>
+</html>
