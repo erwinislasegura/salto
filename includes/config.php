@@ -59,6 +59,7 @@ $siteConfig = $siteConfig ?? [
             ['label' => 'Qué hacer', 'href' => 'blog/que-hacer-en-saltos-del-laja.php'],
             ['label' => 'Dónde alojar', 'href' => 'blog/donde-alojar-en-saltos-del-laja.php'],
             ['label' => 'Fuentes', 'href' => 'fuentes.php'],
+            ['label' => 'Acceso CRM', 'href' => 'crm/index.php', 'class' => 'footer-crm-link'],
         ],
     ],
     'footer' => [

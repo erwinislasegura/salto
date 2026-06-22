@@ -46,7 +46,7 @@ if (!function_exists('h')) {
             <div>
                 <h4><?= h($title) ?></h4>
                 <?php foreach ($links as $link): ?>
-                    <a href="<?= asset_url($assetBase, $link['href']) ?>"><?= h($link['label']) ?></a>
+                    <a<?= isset($link['class']) ? ' class="' . h($link['class']) . '"' : '' ?> href="<?= asset_url($assetBase, $link['href']) ?>"><?= h($link['label']) ?></a>
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
