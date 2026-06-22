@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Hotel Salto del Laja",
+    "type": "Alojamiento destacado",
+    "cat": "alojamiento",
+    "desc": "Hotel emblemático del destino, conocido por su ubicación privilegiada y vista hacia las caídas de agua. Ideal para parejas, familias y visitantes que buscan estadía con servicios completos.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Salto%20del%20Laja%20Chile.jpg",
+    "tags": [
+      "Hotel",
+      "Vista al salto",
+      "Restaurante",
+      "Habitaciones"
+    ],
+    "url": "ficha-negocio.html?hotel-salto-del-laja"
+  },
+  {
+    "name": "Cabañas Parque Salto del Laja",
+    "type": "Cabañas destacadas",
+    "cat": "alojamiento",
+    "desc": "Cabañas equipadas para estadías familiares, con cercanía al salto, áreas verdes y servicios pensados para descanso de fin de semana o vacaciones.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Salto%20del%20Laja%20y%20sendero.JPG",
+    "tags": [
+      "Cabañas",
+      "Familias",
+      "Piscina",
+      "Cocina"
+    ],
+    "url": "ficha-negocio.html?cabanas-parque-salto-del-laja"
+  },
+  {
+    "name": "Camping Las Vertientes",
+    "type": "Camping destacado",
+    "cat": "alojamiento",
+    "desc": "Alternativa para quienes buscan acampar, estar cerca del río y disfrutar una experiencia natural de mayor contacto con el entorno.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Vertientes%20Salto%20del%20Laja%2C%20Regi%C3%B3n%20del%20Bio%20Bio.JPG",
+    "tags": [
+      "Camping",
+      "Río",
+      "Naturaleza",
+      "Grupos"
+    ],
+    "url": "ficha-negocio.html?camping-las-vertientes"
+  },
+  {
+    "name": "Restaurante Saltos del Laja",
+    "type": "Restaurante destacado",
+    "cat": "restaurante",
+    "desc": "Propuesta gastronómica para visitantes que buscan comida chilena, preparaciones caseras, platos familiares y una parada cómoda durante el recorrido.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Salto%20del%20Laja%20Actualmente%202014.JPG",
+    "tags": [
+      "Comida chilena",
+      "Almuerzos",
+      "Familias",
+      "Reservas"
+    ],
+    "url": "ficha-negocio.html?restaurante-saltos-del-laja"
+  },
+  {
+    "name": "Cafetería Mirador del Laja",
+    "type": "Cafetería destacada",
+    "cat": "restaurante",
+    "desc": "Espacio ideal para café, once, pastelería y una pausa turística antes o después de recorrer los miradores.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Salto%20del%20Laja%202019%20%282%29.jpg",
+    "tags": [
+      "Café",
+      "Pastelería",
+      "Vista",
+      "Pausa rápida"
+    ],
+    "url": "ficha-negocio.html?cafeteria-mirador"
+  },
+  {
+    "name": "Artesanía y Souvenirs del Laja",
+    "type": "Emprendimiento destacado",
+    "cat": "emprendimiento",
+    "desc": "Vitrina para productos locales, recuerdos, artesanía, dulces y regalos asociados al destino turístico Saltos del Laja.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Tranquilidad%2C%20Salto%20del%20Laja%20Regi%C3%B3n%20del%20Bio%20Bio.JPG",
+    "tags": [
+      "Artesanía",
+      "Souvenirs",
+      "Productos locales",
+      "Regalos"
+    ],
+    "url": "ficha-negocio.html?artesania-souvenirs"
+  },
+  {
+    "name": "Experiencias Río Laja",
+    "type": "Actividad destacada",
+    "cat": "experiencia",
+    "desc": "Actividades de temporada, paseos, caminatas, fotografía, rutas suaves y experiencias familiares junto al río y sus alrededores.",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Salto%20del%20laja%20in%20winter.JPG",
+    "tags": [
+      "Caminatas",
+      "Fotografía",
+      "Paseos",
+      "Temporada"
+    ],
+    "url": "ficha-negocio.html?experiencias-rio-laja"
+  }
+]
