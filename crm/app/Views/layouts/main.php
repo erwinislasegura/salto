@@ -24,18 +24,32 @@ function crm_h(string $value): string { return htmlspecialchars($value, ENT_QUOT
         <aside class="crm-sidebar">
             <a class="crm-logo" href="index.php">
                 <img src="../assets/img/logo-header-saltos-del-laja.png" alt="Saltos del Laja Turístico">
-                <span>CRM Turístico</span>
+                <span>CRM</span>
             </a>
             <?php if ($currentUser): ?>
-                <nav class="crm-menu">
+                <nav class="crm-menu" aria-label="Menú CRM">
                     <a href="index.php">Panel</a>
                     <a href="index.php?controller=users">Usuarios</a>
-                    <a href="../index.php">Ver sitio</a>
+                    <a href="../index.php">Sitio web</a>
                     <a href="index.php?controller=auth&action=logout">Salir</a>
                 </nav>
+                <div class="crm-userbox">
+                    <small>Sesión activa</small>
+                    <strong><?= crm_h($currentUser['name'] ?? 'Usuario') ?></strong>
+                    <span><?= crm_h($currentUser['role'] ?? 'editor') ?></span>
+                </div>
             <?php endif; ?>
         </aside>
         <section class="crm-content">
+            <?php if ($currentUser): ?>
+                <header class="crm-topbar">
+                    <div>
+                        <span>Saltos del Laja Turístico</span>
+                        <strong><?= crm_h($title ?? 'CRM') ?></strong>
+                    </div>
+                    <a class="btn btn-sm btn-outline-primary" href="../index.php">Ver sitio</a>
+                </header>
+            <?php endif; ?>
             <?php require __DIR__ . '/../' . $view . '.php'; ?>
         </section>
     </main>
@@ -45,7 +59,11 @@ function crm_h(string $value): string { return htmlspecialchars($value, ENT_QUOT
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
     <script>
         if (window.DataTable && document.querySelector('[data-crm-table]')) {
-            new DataTable('[data-crm-table]', { language: { url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json' } });
+            new DataTable('[data-crm-table]', {
+                pageLength: 10,
+                lengthChange: false,
+                language: { url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json' }
+            });
         }
     </script>
 </body>
