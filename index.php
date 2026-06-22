@@ -13,7 +13,7 @@
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/><meta content="Saltos del Laja Turístico" name="author"/><meta content="Saltos del Laja Turístico" name="publisher"/><meta content="CL-BI" name="geo.region"/><meta content="Saltos del Laja, Región del Biobío, Chile" name="geo.placename"/><meta content="-37.216;-72.383" name="geo.position"/><meta content="-37.216, -72.383" name="ICBM"/><meta content="summary_large_image" name="twitter:card"/><meta content="Saltos del Laja Turístico | Comer, alojar, visitar y experiencias" name="twitter:title"/><meta content="https://saltosdellajaturistico.cl/assets/img/logo-header-saltos-del-laja.png" name="twitter:image"/><link href="assets/img/favicon-saltos-del-laja.png" rel="icon" type="image/png"/><meta content="es_CL" property="og:locale"/><link href="https://saltosdellajaturistico.cl/" rel="canonical"/><meta content="telephone=yes" name="format-detection"/><meta content="Saltos del Laja" name="apple-mobile-web-app-title"/><meta content="Saltos del Laja Turístico" property="og:site_name"/><meta content="https://saltosdellajaturistico.cl/" property="og:url"/><meta content="Guía turística de Saltos del Laja con categorías para comer, alojar, artesanías y experiencias; fichas con contacto directo, mapa y registro de negocios para verano 2026-2027." name="twitter:description"/><link as="image" href="assets/img/logo-header-saltos-del-laja.png" imagesrcset="assets/img/logo-header-saltos-del-laja.webp" rel="preload"/><script id="seo-extra-schema" type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://saltosdellajaturistico.cl/#website", "name": "Saltos del Laja Turístico", "url": "https://saltosdellajaturistico.cl/", "inLanguage": "es-CL", "potentialAction": {"@type": "SearchAction", "target": "https://saltosdellajaturistico.cl/?s={search_term_string}", "query-input": "required name=search_term_string"}}, {"@type": "Organization", "@id": "https://saltosdellajaturistico.cl/#organization", "name": "Saltos del Laja Turístico", "url": "https://saltosdellajaturistico.cl/", "logo": {"@type": "ImageObject", "url": "https://saltosdellajaturistico.cl/assets/img/logo-header-saltos-del-laja.png"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+56-9-0000-0000", "contactType": "customer service", "areaServed": "CL", "availableLanguage": "Spanish"}}, {"@type": "TouristDestination", "@id": "https://saltosdellajaturistico.cl/#destination", "name": "Saltos del Laja", "alternateName": ["Salto del Laja", "Saltos del Laja Biobío"], "description": "Destino turístico de naturaleza en la Región del Biobío formado por cascadas del río Laja, con miradores, alojamientos, restaurantes, campings, actividades y emprendimientos locales.", "url": "https://saltosdellajaturistico.cl/", "geo": {"@type": "GeoCoordinates", "latitude": -37.216, "longitude": -72.383}, "containedInPlace": {"@type": "AdministrativeArea", "name": "Región del Biobío, Chile"}, "touristType": ["Familias", "Parejas", "Viajeros de ruta", "Turismo naturaleza", "Turismo local"]}, {"@type": "WebPage", "@id": "https://saltosdellajaturistico.cl/#webpage", "url": "https://saltosdellajaturistico.cl/", "name": "Saltos del Laja Turístico | Verano 2026-2027, alojamientos, restaurantes y guía turística", "description": "Descubre Saltos del Laja y registra tu negocio para la temporada verano 2026-2027. Guía turística con alojamientos, restaurantes, emprendimientos, lugares para visitar, mapa y contacto directo.", "inLanguage": "es-CL", "isPartOf": {"@id": "https://saltosdellajaturistico.cl/#website"}, "about": {"@id": "https://saltosdellajaturistico.cl/#destination"}}, {"@type": "FAQPage", "@id": "https://saltosdellajaturistico.cl/#faq", "mainEntity": [{"@type": "Question", "name": "¿Cuántas cascadas tienen los Saltos del Laja?", "acceptedAnswer": {"@type": "Answer", "text": "El destino se compone de cuatro caídas de agua del río Laja; la principal alcanza aproximadamente 35 metros de altura."}}, {"@type": "Question", "name": "¿Dónde queda Saltos del Laja?", "acceptedAnswer": {"@type": "Answer", "text": "Está en la Región del Biobío, cerca de la Ruta 5 Sur, aproximadamente en el kilómetro 480, al norte de Los Ángeles."}}, {"@type": "Question", "name": "¿Qué servicios turísticos hay en el sector?", "acceptedAnswer": {"@type": "Answer", "text": "Hay alojamientos, cabañas, hoteles, campings, restaurantes, cafeterías, miradores, actividades de temporada y emprendimientos locales."}}]}]}</script></head><body>
 <?php $assetBase = ''; $activePage = 'index'; include __DIR__ . '/includes/header.php'; ?>
 <section aria-label="Portada turística Saltos del Laja" class="hero-slider hero-home agency-hero" id="inicio">
-<div class="hero-slide active" style="--slide:url('assets/img/2.png')">
+<div class="hero-slide active" style="--slide:url('/assets/img/2.png')">
 <div class="container hero-slide-grid agency-hero-grid">
 <div class="hero-copy agency-copy">
 <div class="eyebrow">Temporada verano 2026–2027</div>
@@ -29,7 +29,7 @@
 </aside>
 </div>
 </div>
-<div class="hero-slide" style="--slide:url('assets/img/3.png')">
+<div class="hero-slide" style="--slide:url('/assets/img/3.png')">
 <div class="container hero-slide-grid agency-hero-grid">
 <div class="hero-copy agency-copy">
 <div class="eyebrow">Naturaleza del Biobío</div>
@@ -44,7 +44,7 @@
 </aside>
 </div>
 </div>
-<div class="hero-slide" style="--slide:url('assets/img/4.png')">
+<div class="hero-slide" style="--slide:url('/assets/img/4.png')">
 <div class="container hero-slide-grid agency-hero-grid">
 <div class="hero-copy agency-copy">
 <div class="eyebrow">Alojar · comer · visitar</div>
@@ -321,7 +321,7 @@
 <div class="thumb"><span class="tag">Temporada</span><img alt="Temporada alta Saltos del Laja" loading="lazy" src="assets/img/6.png"/></div>
 <div class="content"><h3>Temporada alta</h3><p>Experiencias preparadas para vacaciones, feriados y viajes de verano.</p><div class="data"><span>Verano</span><span>Servicios</span></div>
 <div class="card-actions"><button data-wa="Hola, necesito información sobre Temporada alta en Saltos del Laja.">Contacto</button><a href="https://www.google.com/maps/search/?api=1&amp;query=Temporada+alta+Saltos+del+Laja+Chile" rel="noopener" target="_blank">Cómo llegar</a></div></div>
-</article></div><p class="home-directory-note"><strong>Nota:</strong> los espacios están preparados para fichas verificadas. Al publicar un negocio se reemplazan textos, fotografías, WhatsApp y ubicación por datos reales.</p></div></section><section aria-label="Temporada turística Saltos del Laja" class="parallax-section parallax-refined agency-parallax" style="--parallax-img:url('assets/img/2.png')">
+</article></div><p class="home-directory-note"><strong>Nota:</strong> los espacios están preparados para fichas verificadas. Al publicar un negocio se reemplazan textos, fotografías, WhatsApp y ubicación por datos reales.</p></div></section><section aria-label="Temporada turística Saltos del Laja" class="parallax-section parallax-refined agency-parallax" style="--parallax-img:url('/assets/img/2.png')">
 <div class="parallax-inner">
 <div class="parallax-copy">
 <div class="eyebrow">Verano 2026–2027</div>
@@ -335,7 +335,7 @@
 <section class="section alt agency-map-block">
 <div class="container split">
 <div class="seo-block refined-text agency-text-card"><div class="eyebrow dark">Planificación turística</div><h2>Todo el destino en una navegación simple</h2><p>El visitante puede revisar alojamientos, restaurantes, lugares para visitar, mapa turístico y opciones de contacto sin recorrer una página extensa o confusa.</p><div class="agency-list"><span>✓ Categorías claras</span><span>✓ Fichas con fotos</span><span>✓ Mapa y ubicación</span><span>✓ Contacto por WhatsApp</span></div><div class="actions"><a class="btn primary" href="mapa-turistico.php">Ver mapa turístico</a><a class="btn green" href="contacto.php">Contactar</a></div></div>
-<div class="map refined-map agency-map" style="--mapimg:url('assets/img/3.png')"><div class="map-box"><h3>Mapa turístico</h3><p>Alojamientos, restaurantes, miradores, rutas, campings, emprendimientos y servicios en un solo lugar.</p><a class="btn primary" href="mapa-turistico.php">Abrir mapa</a></div></div>
+<div class="map refined-map agency-map" style="--mapimg:url('/assets/img/3.png')"><div class="map-box"><h3>Mapa turístico</h3><p>Alojamientos, restaurantes, miradores, rutas, campings, emprendimientos y servicios en un solo lugar.</p><a class="btn primary" href="mapa-turistico.php">Abrir mapa</a></div></div>
 </div>
 </section>
 <section class="section agency-business-cta">
