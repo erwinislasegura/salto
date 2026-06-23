@@ -439,3 +439,60 @@ body{
 .home-directory-card .thumb:after{
   background:rgba(5,35,72,.18);
 }
+
+/* v14: pulido profesional de curvas en home */
+.hero-home:after{
+  height:48px;
+  border-radius:0 0 32px 32px;
+}
+
+.agency-panel,
+.agency-search-box,
+.agency-useful .info-card,
+.home-directory-card,
+.agency-text-card,
+.agency-cta-card,
+.map-box{
+  border-radius:16px!important;
+}
+
+.agency-search .fieldbox{
+  border-radius:12px!important;
+}
+
+.agency-intro:before,
+.registered-businesses:before,
+.agency-map-block:before,
+.agency-business-cta:before{
+  display:none;
+}
+
+.agency-intro{
+  border-radius:0 0 36px 36px;
+}
+
+.registered-businesses,
+.agency-map-block{
+  border-radius:36px 36px 0 0;
+}
+
+.agency-parallax{
+  border-radius:0 0 36px 36px;
+}
+
+.agency-cta-card{
+  border-left:0!important;
+  border-top:5px solid var(--summer-orange)!important;
+}
+
+.home-directory-card .thumb,
+.home-directory-card .thumb img{
+  border-radius:16px 16px 0 0;
+}
+
+@media(max-width:680px){
+  .hero-home:after{height:34px;border-radius:0 0 22px 22px}
+  .agency-panel,.agency-search-box,.agency-useful .info-card,.home-directory-card,.agency-text-card,.agency-cta-card,.map-box{border-radius:14px!important}
+  .agency-search .fieldbox{border-radius:10px!important}
+  .agency-intro,.registered-businesses,.agency-map-block,.agency-parallax{border-radius:24px 24px 0 0}
+}
