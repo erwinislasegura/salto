@@ -1,3 +1,54 @@
+<?php
+function home_h(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+function home_business_whatsapp_url(array $business): string
+{
+    $whatsapp = preg_replace('/\D+/', '', $business['whatsapp'] ?? '');
+    if ($whatsapp === '') {
+        return 'contacto.php';
+    }
+
+    $message = rawurlencode('Hola, necesito información sobre ' . ($business['name'] ?? 'este comercio') . ' en Saltos del Laja.');
+    return 'https://wa.me/' . $whatsapp . '?text=' . $message;
+}
+
+function home_registered_business_categories(): array
+{
+    $config = require __DIR__ . '/crm/config/database.php';
+    $dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', $config['host'], $config['database'], $config['charset']);
+    $connection = new PDO($dsn, $config['username'], $config['password'], [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+
+    $groups = [];
+    $categories = $connection->query('SELECT * FROM crm_categories WHERE is_active = 1 ORDER BY sort_order, name')->fetchAll();
+    $businessStatement = $connection->prepare("SELECT b.* FROM crm_businesses b INNER JOIN crm_business_category bc ON bc.business_id = b.id WHERE bc.category_id = ? AND b.is_active = 1 AND b.status = 'aceptado' ORDER BY b.is_featured DESC, b.name");
+
+    foreach ($categories as $category) {
+        $businessStatement->execute([(int) $category['id']]);
+        $businesses = $businessStatement->fetchAll();
+        if ($businesses) {
+            $groups[] = [
+                'category' => $category,
+                'businesses' => $businesses,
+            ];
+        }
+    }
+
+    return $groups;
+}
+
+try {
+    $homeBusinessCategories = home_registered_business_categories();
+} catch (Throwable $exception) {
+    $homeBusinessCategories = [];
+}
+?>
 <!DOCTYPE html>
 
 <html lang="es"><head>
@@ -86,6 +137,28 @@
 </div>
 </div>
 </section>
+<?php if ($homeBusinessCategories): ?>
+<section class="home-category-section alt registered-businesses" id="comercios-registrados">
+<div class="container">
+<div class="section-head compact-home-head"><div><div class="eyebrow dark">Comercios registrados</div><h2>Fichas comerciales por categoría</h2></div><p>Estos son los negocios aprobados en el CRM, ordenados según su categoría turística para que el visitante pueda comparar, contactar por WhatsApp y abrir la ubicación en mapa.</p></div>
+<?php foreach ($homeBusinessCategories as $homeGroup): ?>
+<?php $homeCategory = $homeGroup['category']; $homeBusinesses = $homeGroup['businesses']; ?>
+<div class="home-registered-group" data-category="<?= home_h($homeCategory['slug']) ?>">
+<div class="section-head compact-home-head mini-head"><div><div class="eyebrow dark"><?= home_h($homeCategory['menu_label'] ?: $homeCategory['name']) ?></div><h3><?= home_h($homeCategory['directory_title'] ?: $homeCategory['name']) ?> <small class="section-count"><?= count($homeBusinesses) ?> opciones</small></h3></div><a class="mini" href="category.php?slug=<?= home_h($homeCategory['slug']) ?>">Ver categoría</a></div>
+<div class="home-category-grid">
+<?php foreach ($homeBusinesses as $business): ?>
+<?php $businessTags = array_values(array_filter(array_map('trim', explode(',', $business['tags'] ?? '')))); ?>
+<article class="home-directory-card" data-category="<?= home_h($homeCategory['slug']) ?>">
+<div class="thumb"><span class="tag"><?= home_h($businessTags[0] ?? 'Registrado') ?></span><img alt="<?= home_h($business['name']) ?>" loading="lazy" src="<?= home_h($business['image'] ?: 'assets/img/3.png') ?>"/></div>
+<div class="content"><h3><?= home_h($business['name']) ?></h3><p><?= home_h($business['summary']) ?></p><div class="data"><?php foreach (array_slice($businessTags, 0, 4) as $tag): ?><span><?= home_h($tag) ?></span><?php endforeach; ?></div><div class="card-actions"><a href="<?= home_h(home_business_whatsapp_url($business)) ?>" <?= !empty($business['whatsapp']) ? 'target="_blank" rel="noopener"' : '' ?>>Contacto</a><a href="<?= home_h($business['map_url'] ?: 'https://www.google.com/maps/search/?api=1&query=Saltos+del+Laja+Chile') ?>" rel="noopener" target="_blank">Cómo llegar</a></div></div>
+</article>
+<?php endforeach; ?>
+</div>
+</div>
+<?php endforeach; ?>
+</div>
+</section>
+<?php endif; ?>
 <section class="section alt agency-destinations">
 <div class="container">
 <div class="section-head elegant-head">
