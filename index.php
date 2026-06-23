@@ -67,16 +67,16 @@ try {
 <div class="hero-slide active" style="--slide:url('../img/2.png')">
 <div class="container hero-slide-grid agency-hero-grid">
 <div class="hero-copy agency-copy">
-<div class="eyebrow">Temporada verano 2026–2027</div>
-<h1 class="h1">La guía turística para preparar tu negocio antes del verano</h1>
-<p class="lead">Alojamientos, restaurantes, cafeterías, campings y emprendimientos pueden postular su ficha comercial para aparecer en una vitrina turística clara, visual y fácil de contactar.</p>
-<div class="actions"><a class="btn white" href="publicar-negocio.php">Registrar negocio</a><a class="btn ghost" href="planes.php">Ver planes comerciales</a></div>
+<div class="eyebrow">Verano en Saltos del Laja</div>
+<h1 class="h1">Descubre comercios, sabores y experiencias junto al río</h1>
+<p class="lead">Una guía turística clara para encontrar dónde alojar, comer, comprar productos locales y planificar una visita memorable a Saltos del Laja.</p>
+<div class="actions"><a class="btn white" href="#destacados">Ver comercios</a><a class="btn ghost" href="mapa-turistico.php">Abrir mapa turístico</a></div>
 </div>
-<aside class="agency-panel">
-<span class="panel-label">Apertura comercial</span>
-<h3>Publicaciones para negocios locales</h3>
-<p>Ficha profesional con fotos, servicios, mapa, WhatsApp y presencia en categorías turísticas.</p>
-<div class="panel-checks"><span>✓ Alojamientos</span><span>✓ Restaurantes</span><span>✓ Emprendimientos</span></div>
+<aside class="agency-panel featured-business-panel">
+<span class="panel-label">Comercios destacados</span>
+<h3>Elige rápido qué hacer en tu visita</h3>
+<p>Encuentra opciones locales para comer, descansar y recorrer con contacto directo por WhatsApp.</p>
+<div class="featured-business-list"><a href="alojamientos.php"><strong>Alojamientos</strong><span>Cabañas, hoteles y campings</span></a><a href="restaurantes.php"><strong>Gastronomía</strong><span>Restaurantes, cafés y comida local</span></a><a href="emprendimientos.php"><strong>Emprendimientos</strong><span>Productos, artesanías y servicios</span></a></div>
 </aside>
 </div>
 </div>
@@ -88,10 +88,11 @@ try {
 <p class="lead">El río Laja, sus caídas de agua y miradores ofrecen una visita ideal para familias, parejas, viajeros de ruta y amantes de la fotografía.</p>
 <div class="actions"><a class="btn white" href="lugares-para-visitar.php">Qué visitar</a><a class="btn ghost" href="mapa-turistico.php">Ver mapa turístico</a></div>
 </div>
-<aside class="agency-panel transparent-panel">
-<span class="panel-label">Planifica tu visita</span>
-<h3>Cascadas, río y miradores</h3>
-<p>Una parada icónica del sur de Chile con servicios turísticos, gastronomía local y rutas simples para visitantes.</p>
+<aside class="agency-panel transparent-panel featured-business-panel">
+<span class="panel-label">Comercios destacados</span>
+<h3>Elige rápido qué hacer en tu visita</h3>
+<p>Encuentra opciones locales para comer, descansar y recorrer con contacto directo por WhatsApp.</p>
+<div class="featured-business-list"><a href="alojamientos.php"><strong>Alojamientos</strong><span>Cabañas, hoteles y campings</span></a><a href="restaurantes.php"><strong>Gastronomía</strong><span>Restaurantes, cafés y comida local</span></a><a href="emprendimientos.php"><strong>Emprendimientos</strong><span>Productos, artesanías y servicios</span></a></div>
 </aside>
 </div>
 </div>
@@ -103,10 +104,11 @@ try {
 <p class="lead">Encuentra opciones para dormir, comer, recorrer y descubrir productos locales en una guía pensada para usarse rápido desde el celular.</p>
 <div class="actions"><a class="btn white" href="alojamientos.php">Ver alojamientos</a><a class="btn ghost" href="restaurantes.php">Dónde comer</a></div>
 </div>
-<aside class="agency-panel transparent-panel">
-<span class="panel-label">Guía turística local</span>
-<h3>Información útil y contacto directo</h3>
-<p>Categorías ordenadas, fichas visuales y botones de WhatsApp para consultar sin fricción.</p>
+<aside class="agency-panel transparent-panel featured-business-panel">
+<span class="panel-label">Comercios destacados</span>
+<h3>Elige rápido qué hacer en tu visita</h3>
+<p>Encuentra opciones locales para comer, descansar y recorrer con contacto directo por WhatsApp.</p>
+<div class="featured-business-list"><a href="alojamientos.php"><strong>Alojamientos</strong><span>Cabañas, hoteles y campings</span></a><a href="restaurantes.php"><strong>Gastronomía</strong><span>Restaurantes, cafés y comida local</span></a><a href="emprendimientos.php"><strong>Emprendimientos</strong><span>Productos, artesanías y servicios</span></a></div>
 </aside>
 </div>
 </div>
