@@ -41,3 +41,10 @@ En páginas dentro de subdirectorios usa `$assetBase = '../';` para mantener rut
 - `database/crm_schema.sql`: tabla `crm_users` y usuario administrador inicial.
 
 Para instalar: importa `database/crm_schema.sql`, ajusta las credenciales de base de datos y entra desde el enlace **Acceso CRM** del footer. Cambia la contraseña inicial después del primer ingreso.
+
+### Módulos de categorías y comercios
+
+- `crm/app/Controllers/CategoriesController.php` y `crm/app/Models/Category.php`: administran las categorías visibles del menú público, incluyendo textos SEO, hero, sección de tarjetas, bloque estático y CTA.
+- `crm/app/Controllers/BusinessesController.php` y `crm/app/Models/Business.php`: administran comercios, tags y relación con una o más categorías.
+- `category.php`: renderiza una página pública dinámica por categoría (`category.php?slug=alojamientos`) y muestra tarjetas de comercios con filtro por tag.
+- `database/crm_schema.sql`: incluye las categorías base del menú: Alojamientos, Restaurantes, Emprendimientos, Experiencias y Qué visitar, además de comercios demostrativos relacionados.

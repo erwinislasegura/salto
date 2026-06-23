@@ -30,6 +30,8 @@ function crm_h(string $value): string { return htmlspecialchars($value, ENT_QUOT
                 <nav class="crm-menu" aria-label="Menú CRM">
                     <a href="index.php">Panel</a>
                     <a href="index.php?controller=users">Usuarios</a>
+                    <a href="index.php?controller=categories">Categorías</a>
+                    <a href="index.php?controller=businesses">Comercios</a>
                     <a href="../index.php">Sitio web</a>
                     <a href="index.php?controller=auth&action=logout">Salir</a>
                 </nav>
