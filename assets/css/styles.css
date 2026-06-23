@@ -788,3 +788,32 @@ body{
 .social-icon.active{
   color:#fff!important;
 }
+
+/* v24: forzar iconos naranjos dentro de la barra superior */
+.topline .social-icon{
+  color:var(--summer-coral)!important;
+  background:#fff!important;
+  border-color:#fff!important;
+}
+
+.topline .social-icon svg,
+.topline .social-icon svg path{
+  fill:var(--summer-coral)!important;
+}
+
+.topline .social-icon:hover,
+.topline .social-icon:focus-visible,
+.topline .social-icon.active{
+  color:#fff!important;
+  background:var(--summer-coral-dark)!important;
+  border-color:var(--summer-coral-dark)!important;
+}
+
+.topline .social-icon:hover svg,
+.topline .social-icon:hover svg path,
+.topline .social-icon:focus-visible svg,
+.topline .social-icon:focus-visible svg path,
+.topline .social-icon.active svg,
+.topline .social-icon.active svg path{
+  fill:#fff!important;
+}
