@@ -182,3 +182,609 @@ body{background:var(--paper);color:var(--text);font-size:15px;letter-spacing:-.0
 .home-empty-directory{background:#fff;border:1px solid #DFEAF2;border-radius:6px;box-shadow:0 10px 28px rgba(7,34,61,.055);padding:24px;margin-top:22px}
 .home-empty-directory h3{color:#0B263F;font-size:20px;font-weight:650;margin:0 0 8px}.home-empty-directory p{font-size:13.5px;line-height:1.65;color:#5C7184;margin:0 0 16px}
 @media(max-width:680px){.registered-businesses .mini-head{align-items:flex-start}.registered-businesses .mini-head .mini{width:max-content}}
+
+/* v17: inicio verano limpio, alegre y coherente */
+:root{
+  --summer-coral:#F97316;
+  --summer-coral-dark:#B94B08;
+  --summer-sun:#FFC857;
+  --summer-leaf:#58A618;
+  --summer-aqua:#00A6B2;
+  --summer-sand:#FFF7EA;
+  --summer-sky:#F0FBFF;
+  --summer-ink:#073B4C;
+}
+
+body{
+  background:var(--paper);
+}
+
+.topbar{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 8px 26px rgba(4,45,99,.045);
+}
+
+.topline{
+  background:var(--summer-coral)!important;
+  border-bottom:0!important;
+  color:#fff!important;
+}
+
+.topline a,
+.topline b,
+.topline span{
+  color:#fff!important;
+}
+
+.social-icon{
+  background:#fff!important;
+  border-color:#fff!important;
+  color:var(--summer-coral-dark)!important;
+}
+
+.social-icon:hover{
+  background:var(--summer-sun)!important;
+  border-color:var(--summer-sun)!important;
+  color:var(--summer-ink)!important;
+}
+
+.nav{
+  height:76px;
+}
+
+.navlinks a{
+  color:#314B68;
+}
+
+.navlinks a:after{
+  background:transparent;
+}
+
+.navlinks a:hover,
+.navlinks a.active{
+  color:var(--summer-coral-dark);
+}
+
+.navlinks a:hover:after,
+.navlinks a.active:after{
+  background:var(--summer-coral);
+}
+
+.navlinks .cta{
+  background:var(--summer-coral)!important;
+  border-color:var(--summer-coral)!important;
+  color:#fff!important;
+}
+
+.navlinks .cta:hover{
+  background:var(--summer-coral-dark)!important;
+  border-color:var(--summer-coral-dark)!important;
+  color:#fff!important;
+}
+
+.hero-home{
+  background:var(--blue-900);
+  overflow:hidden;
+}
+
+.agency-hero .hero-slide{
+  background-image:var(--slide)!important;
+}
+
+.agency-hero .hero-slide:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:rgba(5,43,97,.68);
+}
+
+.agency-hero .hero-slide:after{
+  content:"";
+  position:absolute;
+  left:-8%;
+  right:-8%;
+  bottom:-54px;
+  z-index:1;
+  height:118px;
+  pointer-events:none;
+  background:var(--summer-sand);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow:0 -12px 0 var(--summer-sun);
+}
+
+.hero-home:after{
+  display:none;
+}
+
+.agency-copy .eyebrow,
+.agency-parallax .eyebrow,
+.eyebrow.dark{
+  background:var(--summer-sand)!important;
+  border-color:#F5C8A4!important;
+  color:var(--summer-coral-dark)!important;
+  border-radius:999px;
+}
+
+.agency-panel{
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(255,255,255,.72);
+  border-top:5px solid var(--summer-sun)!important;
+  border-radius:18px!important;
+  box-shadow:0 20px 48px rgba(4,31,64,.18);
+}
+
+.agency-panel .panel-label{
+  background:var(--summer-sand);
+  color:var(--summer-coral-dark);
+  border-radius:999px;
+}
+
+.btn,
+.mini,
+.home-directory-card .card-actions a,
+.home-directory-card .card-actions button{
+  border-radius:999px!important;
+}
+
+.btn.primary,
+.mini{
+  background:var(--summer-coral)!important;
+  border-color:var(--summer-coral)!important;
+  color:#fff!important;
+}
+
+.btn.primary:hover,
+.mini:hover{
+  background:var(--summer-coral-dark)!important;
+  border-color:var(--summer-coral-dark)!important;
+  color:#fff!important;
+}
+
+.btn.green{
+  background:var(--summer-leaf)!important;
+  border-color:var(--summer-leaf)!important;
+  color:#fff!important;
+}
+
+.btn.green:hover{
+  background:#3F8610!important;
+  border-color:#3F8610!important;
+  color:#fff!important;
+}
+
+.btn.white{
+  background:#fff!important;
+  border-color:#fff!important;
+  color:var(--summer-ink)!important;
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.14)!important;
+  border-color:rgba(255,255,255,.52)!important;
+  color:#fff!important;
+}
+
+.home-directory-card .card-actions a{
+  color:var(--blue-900)!important;
+}
+
+.home-directory-card .card-actions a:hover{
+  border-color:var(--summer-coral)!important;
+  color:var(--summer-coral-dark)!important;
+}
+
+.agency-search{
+  margin-top:-40px;
+}
+
+.agency-search-box{
+  background:#fff!important;
+  border:1px solid #F2D6BD!important;
+  border-top:5px solid var(--summer-coral)!important;
+  border-radius:22px!important;
+  box-shadow:0 18px 42px rgba(4,45,99,.12)!important;
+}
+
+.agency-search .fieldbox{
+  background:var(--summer-sand)!important;
+  border-color:#F4DEC9!important;
+  border-radius:16px!important;
+}
+
+.agency-search .fieldbox label,
+.cta-kicker,
+.registered-businesses .mini-head .mini{
+  color:var(--summer-coral-dark)!important;
+}
+
+.agency-intro{
+  position:relative;
+  background:var(--summer-sand)!important;
+  border-radius:0 0 42px 42px;
+}
+
+.agency-intro:after{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  bottom:-24px;
+  height:48px;
+  background:var(--summer-sand);
+  border-radius:0 0 999px 999px;
+  pointer-events:none;
+}
+
+.agency-useful .info-card{
+  background:#fff;
+  border:1px solid #F0DEC8;
+  border-left:5px solid var(--summer-coral);
+  border-radius:18px!important;
+  box-shadow:0 10px 28px rgba(129,73,18,.08);
+}
+
+.agency-useful .info-card.green{
+  border-left-color:var(--summer-leaf);
+}
+
+.agency-useful .info-icon{
+  background:var(--summer-sun)!important;
+  color:var(--summer-ink)!important;
+  border-radius:14px!important;
+}
+
+.agency-useful .info-card.green .info-icon{
+  background:#EAF8DD!important;
+  color:#2E7D32!important;
+}
+
+.registered-businesses{
+  position:relative;
+  background:#fff!important;
+  border-radius:42px 42px 0 0;
+}
+
+.home-directory-card{
+  background:#fff;
+  border:1px solid #E8D9C7;
+  border-radius:18px!important;
+  box-shadow:0 12px 32px rgba(7,34,61,.07);
+}
+
+.home-directory-card .thumb,
+.home-directory-card .thumb img{
+  border-radius:18px 18px 0 0!important;
+}
+
+.home-directory-card .thumb .tag,
+.badge{
+  background:var(--summer-sun)!important;
+  color:var(--summer-ink)!important;
+  border-radius:999px;
+}
+
+.home-directory-card .data span,
+.section-count{
+  background:#EAF8DD!important;
+  border-color:#CBE8B0!important;
+  color:#2E7D32!important;
+  border-radius:999px!important;
+}
+
+.agency-parallax{
+  background-image:var(--parallax-img)!important;
+  background-color:var(--blue-900)!important;
+  border-radius:42px!important;
+  margin:34px auto;
+  width:min(1180px,calc(100% - 32px));
+  box-shadow:inset 0 0 0 9999px rgba(5,43,97,.66),0 18px 46px rgba(4,45,99,.14);
+}
+
+.agency-parallax:before,
+.agency-parallax:after{
+  display:none!important;
+}
+
+.agency-map-block{
+  position:relative;
+  background:var(--summer-sky)!important;
+  border-radius:42px 42px 0 0;
+}
+
+.agency-text-card,
+.map-box,
+.agency-cta-card{
+  border:1px solid #DDEAF5!important;
+  border-radius:18px!important;
+  box-shadow:0 12px 32px rgba(7,34,61,.07);
+}
+
+.agency-map{
+  border-radius:18px!important;
+  box-shadow:var(--shadow);
+}
+
+.agency-list span{
+  background:#fff!important;
+  border-color:#DDEAF5!important;
+  border-radius:999px!important;
+}
+
+.agency-business-cta{
+  background:var(--summer-sand)!important;
+}
+
+.agency-cta-card{
+  background:#fff!important;
+  border-top:5px solid var(--summer-aqua)!important;
+}
+
+.footer{
+  background:#061B34!important;
+  color:rgba(255,255,255,.72)!important;
+  border-top:8px solid var(--summer-coral);
+  border-radius:42px 42px 0 0;
+}
+
+.footer a{
+  color:rgba(255,255,255,.70)!important;
+}
+
+.footer a:hover{
+  color:var(--summer-sun)!important;
+}
+
+.mobilebar{
+  background:#fff!important;
+  border-color:#F2D6BD!important;
+  border-radius:18px!important;
+}
+
+.mobilebar a{
+  border-radius:14px!important;
+  color:var(--blue-900)!important;
+}
+
+.mobilebar a.active{
+  background:var(--summer-coral)!important;
+  color:#fff!important;
+}
+
+.whatsapp-float{
+  background:var(--summer-leaf)!important;
+  color:#fff!important;
+}
+
+@media(max-width:980px){
+  .navlinks.open{
+    background:#fff!important;
+    border-radius:18px!important;
+  }
+  .navlinks.open a{
+    border-radius:12px!important;
+  }
+}
+
+@media(max-width:680px){
+  .agency-hero .hero-slide:after{bottom:-34px;height:76px;box-shadow:0 -8px 0 var(--summer-sun)}
+  .agency-search{margin-top:0}
+  .agency-search-box,.agency-panel,.agency-useful .info-card,.home-directory-card,.agency-text-card,.map-box,.agency-cta-card,.agency-map{border-radius:14px!important}
+  .agency-intro,.registered-businesses,.agency-map-block,.footer{border-radius:28px 28px 0 0}
+  .agency-parallax{width:min(100% - 24px,1180px);border-radius:24px!important;margin:24px auto}
+}
+
+/* v18: contraste de textos en botones */
+.btn,
+.btn.primary,
+.btn.green,
+.mini,
+.navlinks .cta,
+.home-directory-card .card-actions button,
+.mobilebar a.active,
+.whatsapp-float{
+  color:#fff!important;
+}
+
+.btn.white,
+.btn.ghost,
+.home-directory-card .card-actions a,
+.mobilebar a{
+  color:var(--summer-ink)!important;
+}
+
+.btn.ghost{
+  background:#fff!important;
+  border-color:#fff!important;
+}
+
+.btn.primary:hover,
+.btn.green:hover,
+.mini:hover,
+.navlinks .cta:hover,
+.home-directory-card .card-actions button:hover{
+  color:#fff!important;
+}
+
+.home-directory-card .card-actions a:hover{
+  color:var(--summer-coral-dark)!important;
+}
+
+/* v19: buscador de inicio más moderno y compacto */
+.agency-search{
+  margin-top:-28px;
+}
+
+.agency-search-box{
+  align-items:center;
+  gap:8px;
+  padding:8px!important;
+  border:1px solid #E8D8C8!important;
+  border-top:4px solid var(--summer-coral)!important;
+  border-radius:18px!important;
+  box-shadow:0 14px 34px rgba(7,34,61,.10)!important;
+}
+
+.agency-search .fieldbox{
+  min-height:48px;
+  padding:9px 12px!important;
+  border-radius:12px!important;
+  background:#FFF9F1!important;
+}
+
+.agency-search .fieldbox label{
+  margin-bottom:4px;
+  color:var(--summer-coral-dark)!important;
+  font-size:9px;
+  letter-spacing:.11em;
+}
+
+.agency-search .fieldbox strong,
+.agency-search .fieldbox select{
+  color:var(--summer-ink)!important;
+  font-size:12px;
+  line-height:1.15;
+}
+
+.agency-search .btn.primary{
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px!important;
+  font-size:11.5px;
+  white-space:nowrap;
+  box-shadow:none;
+}
+
+@media(max-width:980px){
+  .agency-search-box{grid-template-columns:1fr 1fr;padding:10px!important}
+  .agency-search .btn.primary{grid-column:1/-1;width:100%}
+}
+
+@media(max-width:680px){
+  .agency-search{margin-top:0;padding-top:10px}
+  .agency-search-box{grid-template-columns:1fr;border-radius:14px!important}
+  .agency-search .fieldbox{min-height:46px;border-radius:10px!important}
+}
+
+/* v20: mejoras móviles para WhatsApp y barra inferior */
+@media(max-width:680px){
+  .whatsapp-float{
+    left:14px!important;
+    right:14px!important;
+    bottom:88px!important;
+    min-height:48px;
+    padding:8px 14px!important;
+    border-radius:16px!important;
+    justify-content:center;
+    gap:10px;
+    box-shadow:0 12px 28px rgba(47,134,16,.24);
+  }
+
+  .whatsapp-float .wa-dot{
+    width:32px;
+    height:32px;
+    border-radius:10px;
+  }
+
+  .whatsapp-float small{
+    font-size:9px;
+  }
+
+  .whatsapp-float strong{
+    font-size:12px;
+  }
+
+  .mobilebar{
+    left:10px;
+    right:10px;
+    bottom:10px;
+    padding:6px!important;
+    border-radius:18px!important;
+    box-shadow:0 12px 30px rgba(7,34,61,.14);
+  }
+
+  .mobilebar a{
+    min-height:48px;
+    border-radius:14px!important;
+    color:var(--summer-ink)!important;
+    font-size:9.5px;
+  }
+
+  .mobilebar a span{
+    color:inherit!important;
+    font-size:14px;
+  }
+
+  .mobilebar a.active{
+    background:var(--summer-coral)!important;
+    color:#fff!important;
+  }
+
+  .btn.primary,
+  .navlinks .cta,
+  .agency-search .btn.primary,
+  .mobilebar a.active{
+    color:#fff!important;
+  }
+}
+
+/* v21: iconos oficiales para redes y WhatsApp */
+.social-icon svg,
+.wa-dot svg{
+  display:block;
+  width:1em;
+  height:1em;
+  fill:currentColor;
+}
+
+.social-icon{
+  font-size:13px;
+}
+
+.wa-dot{
+  font-size:18px;
+}
+
+/* v22: redes sociales más grandes con estado naranjo/blanco */
+.social-icon{
+  width:32px;
+  height:32px;
+  font-size:18px!important;
+  color:var(--summer-coral)!important;
+  background:#fff!important;
+  border-color:#fff!important;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible,
+.social-icon.active{
+  color:#fff!important;
+  background:var(--summer-coral-dark)!important;
+  border-color:var(--summer-coral-dark)!important;
+}
+
+/* v23: centrar y hacer visibles los SVG de redes */
+.social-icon{
+  display:inline-grid!important;
+  place-items:center;
+  width:34px!important;
+  height:34px!important;
+  padding:0!important;
+  color:#9A3A05!important;
+  line-height:1!important;
+}
+
+.social-icon svg{
+  width:19px!important;
+  height:19px!important;
+  fill:currentColor!important;
+  flex:0 0 auto;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible,
+.social-icon.active{
+  color:#fff!important;
+}
