@@ -182,3 +182,260 @@ body{background:var(--paper);color:var(--text);font-size:15px;letter-spacing:-.0
 .home-empty-directory{background:#fff;border:1px solid #DFEAF2;border-radius:6px;box-shadow:0 10px 28px rgba(7,34,61,.055);padding:24px;margin-top:22px}
 .home-empty-directory h3{color:#0B263F;font-size:20px;font-weight:650;margin:0 0 8px}.home-empty-directory p{font-size:13.5px;line-height:1.65;color:#5C7184;margin:0 0 16px}
 @media(max-width:680px){.registered-businesses .mini-head{align-items:flex-start}.registered-businesses .mini-head .mini{width:max-content}}
+
+/* v13: home veraniega fresca sin degradados */
+:root{
+  --summer-orange:#FF7A1A;
+  --summer-orange-700:#C94E00;
+  --summer-orange-100:#FFF0E3;
+  --summer-sand:#FFF7E8;
+  --summer-lime:#CFEF3D;
+  --summer-green:#2FB344;
+  --summer-teal:#00A7B5;
+  --summer-sky:#E9FBFF;
+}
+
+body{
+  background:var(--summer-sand);
+}
+
+.agency-hero{
+  background:var(--blue-900);
+}
+
+.agency-hero .hero-slide{
+  background-image:var(--slide)!important;
+}
+
+.agency-hero .hero-slide:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:rgba(4,31,64,.62);
+}
+
+.agency-hero .hero-slide:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:none;
+  box-shadow:inset 110px 0 0 rgba(0,167,181,.22),inset -120px 0 0 rgba(255,122,26,.24);
+}
+
+.hero-home:after{
+  background:var(--summer-sand);
+  height:76px;
+  border-radius:0 0 50% 50% / 0 0 100% 100%;
+}
+
+.agency-copy .eyebrow,
+.agency-parallax .eyebrow{
+  background:var(--summer-orange-100);
+  border-color:#FFD4AD;
+  color:#8A3A05;
+}
+
+.agency-panel{
+  border-top:5px solid var(--summer-orange);
+  border-radius:22px 8px 22px 8px;
+  box-shadow:0 24px 54px rgba(4,31,64,.18),0 0 0 1px rgba(255,255,255,.36) inset;
+}
+
+.agency-panel .panel-label{
+  background:var(--summer-orange-100);
+  color:var(--summer-orange-700);
+}
+
+.panel-checks span:before,
+.agency-list span:before{
+  color:var(--summer-orange);
+}
+
+.btn.white{
+  color:#0B3E4A;
+}
+
+.btn.primary,
+.navlinks .cta{
+  background:var(--summer-orange);
+  border-color:var(--summer-orange);
+  color:#fff;
+}
+
+.btn.primary:hover,
+.navlinks .cta:hover{
+  background:var(--summer-orange-700);
+  border-color:var(--summer-orange-700);
+}
+
+.btn.green{
+  background:var(--summer-green);
+  border-color:var(--summer-green);
+  color:#fff;
+}
+
+.btn.green:hover{
+  background:#238B35;
+  border-color:#238B35;
+}
+
+.agency-search{
+  margin-top:-44px;
+}
+
+.agency-search-box{
+  border:2px solid rgba(255,122,26,.34)!important;
+  border-radius:24px 6px 24px 6px!important;
+  box-shadow:0 20px 52px rgba(201,91,11,.14),0 8px 24px rgba(4,45,99,.08)!important;
+}
+
+.agency-search .fieldbox{
+  background:#FFF9F1;
+  border-color:#F4DEC9;
+  border-radius:16px 4px 16px 4px;
+}
+
+.agency-search .fieldbox label,
+.cta-kicker,
+.registered-businesses .mini-head .mini{
+  color:var(--summer-orange-700);
+}
+
+.agency-intro{
+  position:relative;
+  margin-top:-1px;
+  background:var(--summer-sky);
+  border-radius:0 0 72px 72px / 0 0 34px 34px;
+}
+
+.agency-intro:before,
+.registered-businesses:before,
+.agency-map-block:before,
+.agency-business-cta:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-20px;
+  width:min(520px,72vw);
+  height:40px;
+  transform:translateX(-50%);
+  background:inherit;
+  border-radius:0 0 999px 999px;
+  pointer-events:none;
+}
+
+.agency-useful .info-card{
+  border-color:#F1E3D0;
+  border-left:5px solid var(--summer-orange);
+  background:#fff;
+  border-radius:20px 6px 20px 6px;
+}
+
+.agency-useful .info-card.green{
+  border-left-color:var(--summer-green);
+}
+
+.agency-useful .info-icon{
+  background:var(--summer-orange-100)!important;
+  color:var(--summer-orange-700)!important;
+  border-radius:999px!important;
+}
+
+.agency-useful .info-card.green .info-icon{
+  background:#EAF8DD!important;
+  color:#238B35!important;
+}
+
+.registered-businesses{
+  position:relative;
+  background:#FFFDF8;
+  border-radius:72px 72px 0 0 / 34px 34px 0 0;
+}
+
+.home-directory-card{
+  border-color:#EFDCC6;
+  border-radius:22px 6px 22px 6px;
+  box-shadow:0 14px 34px rgba(129,73,18,.08);
+}
+
+.home-directory-card .thumb .tag,
+.badge{
+  background:var(--summer-orange-100);
+  color:var(--summer-orange-700);
+}
+
+.home-directory-card .data span,
+.section-count{
+  background:#EAF8DD;
+  border-color:#C8E8AE;
+  color:#238B35;
+}
+
+.home-directory-card .card-actions a:hover{
+  border-color:var(--summer-orange);
+  color:var(--summer-orange-700);
+}
+
+.agency-parallax{
+  background-image:var(--parallax-img)!important;
+  background-color:#0A4651;
+  box-shadow:inset 0 0 0 9999px rgba(4,31,64,.58);
+  border-radius:0 0 80px 80px / 0 0 36px 36px;
+}
+
+.agency-map-block{
+  position:relative;
+  background:#F4FBF0!important;
+  border-radius:72px 72px 0 0 / 34px 34px 0 0;
+}
+
+.agency-text-card,
+.agency-cta-card,
+.map-box{
+  border-color:#F0DDC5;
+  border-radius:24px 8px 24px 8px;
+  box-shadow:0 18px 42px rgba(129,73,18,.08);
+}
+
+.agency-list span{
+  background:#FFF9F1;
+  border-color:#F1DFC9;
+  border-radius:999px;
+}
+
+.agency-business-cta{
+  position:relative;
+  background:var(--summer-sand);
+}
+
+.agency-cta-card{
+  background:#FFFDF8!important;
+  border-left:6px solid var(--summer-orange)!important;
+}
+
+@media(max-width:680px){
+  body{background:var(--summer-sand)}
+  .agency-hero .hero-slide:after{box-shadow:inset 42px 0 0 rgba(0,167,181,.18),inset -44px 0 0 rgba(255,122,26,.20)}
+  .agency-search{margin-top:0}
+  .agency-search-box,.agency-search .fieldbox,.agency-panel,.home-directory-card,.agency-text-card,.agency-cta-card,.map-box{border-radius:18px 6px 18px 6px!important}
+  .agency-intro,.registered-businesses,.agency-map-block,.agency-parallax{border-radius:34px 34px 0 0 / 20px 20px 0 0}
+}
+
+/* v13 ajuste: quitar degradados heredados en componentes de home */
+.agency-parallax:before{
+  background:rgba(255,255,255,.06)!important;
+}
+
+.agency-map{
+  background:var(--mapimg) center/cover!important;
+  background-color:#0A4651;
+  box-shadow:inset 0 0 0 9999px rgba(4,31,64,.18),var(--shadow);
+}
+
+.home-directory-card .thumb:after{
+  background:rgba(5,35,72,.18);
+}
