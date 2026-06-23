@@ -729,3 +729,20 @@ body{
     color:#fff!important;
   }
 }
+
+/* v21: iconos oficiales para redes y WhatsApp */
+.social-icon svg,
+.wa-dot svg{
+  display:block;
+  width:1em;
+  height:1em;
+  fill:currentColor;
+}
+
+.social-icon{
+  font-size:13px;
+}
+
+.wa-dot{
+  font-size:18px;
+}
