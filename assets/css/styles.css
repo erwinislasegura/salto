@@ -764,3 +764,27 @@ body{
   background:var(--summer-coral-dark)!important;
   border-color:var(--summer-coral-dark)!important;
 }
+
+/* v23: centrar y hacer visibles los SVG de redes */
+.social-icon{
+  display:inline-grid!important;
+  place-items:center;
+  width:34px!important;
+  height:34px!important;
+  padding:0!important;
+  color:#9A3A05!important;
+  line-height:1!important;
+}
+
+.social-icon svg{
+  width:19px!important;
+  height:19px!important;
+  fill:currentColor!important;
+  flex:0 0 auto;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible,
+.social-icon.active{
+  color:#fff!important;
+}
