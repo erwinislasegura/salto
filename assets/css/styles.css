@@ -746,3 +746,21 @@ body{
 .wa-dot{
   font-size:18px;
 }
+
+/* v22: redes sociales más grandes con estado naranjo/blanco */
+.social-icon{
+  width:32px;
+  height:32px;
+  font-size:18px!important;
+  color:var(--summer-coral)!important;
+  background:#fff!important;
+  border-color:#fff!important;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible,
+.social-icon.active{
+  color:#fff!important;
+  background:var(--summer-coral-dark)!important;
+  border-color:var(--summer-coral-dark)!important;
+}
