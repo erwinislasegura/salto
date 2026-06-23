@@ -9,6 +9,47 @@ $navItems = $siteConfig['nav'];
 $primaryCta = $siteConfig['primary_cta'];
 $socialLinks = $siteConfig['social'];
 
+if (!function_exists('load_dynamic_nav_items')) {
+    function load_dynamic_nav_items(array $fallbackNav): array
+    {
+        $databaseConfig = __DIR__ . '/../crm/config/database.php';
+        if (!is_file($databaseConfig)) {
+            return $fallbackNav;
+        }
+
+        try {
+            $config = require $databaseConfig;
+            $dsn = sprintf('mysql:host=%s;dbname=%s;charset=%s', $config['host'], $config['database'], $config['charset']);
+            $pdo = new PDO($dsn, $config['username'], $config['password'], [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]);
+            $categories = $pdo->query('SELECT slug, menu_label FROM crm_categories WHERE is_active = 1 ORDER BY sort_order, name')->fetchAll();
+        } catch (Throwable $exception) {
+            return $fallbackNav;
+        }
+
+        if (!$categories) {
+            return $fallbackNav;
+        }
+
+        $nav = ['index' => $fallbackNav['index'] ?? ['label' => 'Inicio', 'href' => 'index.php']];
+        foreach ($categories as $category) {
+            $nav[$category['slug']] = [
+                'label' => $category['menu_label'],
+                'href' => 'category.php?slug=' . rawurlencode($category['slug']),
+            ];
+        }
+        if (isset($fallbackNav['mapa-turistico'])) {
+            $nav['mapa-turistico'] = $fallbackNav['mapa-turistico'];
+        }
+
+        return $nav;
+    }
+}
+
+$navItems = load_dynamic_nav_items($siteConfig['nav']);
+
 function asset_url(string $assetBase, string $path): string
 {
     return htmlspecialchars($assetBase . $path, ENT_QUOTES, 'UTF-8');
