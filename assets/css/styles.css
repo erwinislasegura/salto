@@ -575,3 +575,39 @@ body{
   .agency-intro,.registered-businesses,.agency-map-block,.footer{border-radius:28px 28px 0 0}
   .agency-parallax{width:min(100% - 24px,1180px);border-radius:24px!important;margin:24px auto}
 }
+
+/* v18: contraste de textos en botones */
+.btn,
+.btn.primary,
+.btn.green,
+.mini,
+.navlinks .cta,
+.home-directory-card .card-actions button,
+.mobilebar a.active,
+.whatsapp-float{
+  color:#fff!important;
+}
+
+.btn.white,
+.btn.ghost,
+.home-directory-card .card-actions a,
+.mobilebar a{
+  color:var(--summer-ink)!important;
+}
+
+.btn.ghost{
+  background:#fff!important;
+  border-color:#fff!important;
+}
+
+.btn.primary:hover,
+.btn.green:hover,
+.mini:hover,
+.navlinks .cta:hover,
+.home-directory-card .card-actions button:hover{
+  color:#fff!important;
+}
+
+.home-directory-card .card-actions a:hover{
+  color:var(--summer-coral-dark)!important;
+}
