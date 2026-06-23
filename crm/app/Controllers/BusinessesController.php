@@ -23,7 +23,9 @@ class BusinessesController extends Controller
     public function store(): void
     {
         Auth::requireLogin();
-        Business::create($_POST);
+        $data = $_POST;
+        $data['image'] = $this->imagePath('image_file', $data['image'] ?? '');
+        Business::create($data);
         $this->redirect('businesses');
     }
 
@@ -40,7 +42,9 @@ class BusinessesController extends Controller
     public function update(): void
     {
         Auth::requireLogin();
-        Business::update((int) ($_POST['id'] ?? 0), $_POST);
+        $data = $_POST;
+        $data['image'] = $this->imagePath('image_file', $data['image'] ?? '');
+        Business::update((int) ($_POST['id'] ?? 0), $data);
         $this->redirect('businesses');
     }
 

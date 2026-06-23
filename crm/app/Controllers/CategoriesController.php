@@ -22,7 +22,9 @@ class CategoriesController extends Controller
     public function store(): void
     {
         Auth::requireLogin();
-        Category::create($_POST);
+        $data = $_POST;
+        $data['hero_image'] = $this->imagePath('hero_image_file', $data['hero_image'] ?? '');
+        Category::create($data);
         $this->redirect('categories');
     }
 
@@ -39,7 +41,9 @@ class CategoriesController extends Controller
     public function update(): void
     {
         Auth::requireLogin();
-        Category::update((int) ($_POST['id'] ?? 0), $_POST);
+        $data = $_POST;
+        $data['hero_image'] = $this->imagePath('hero_image_file', $data['hero_image'] ?? '');
+        Category::update((int) ($_POST['id'] ?? 0), $data);
         $this->redirect('categories');
     }
 
