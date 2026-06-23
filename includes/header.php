@@ -59,6 +59,18 @@ function h(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
+
+function social_icon_svg(string $name, string $fallback): string
+{
+    $icons = [
+        'Instagram' => '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.15a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>',
+        'Facebook' => '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M15.12 8.1h2.2V4.28A28.5 28.5 0 0 0 14.1 4c-3.18 0-5.36 2-5.36 5.66V13H5.22v4.27h3.52V24h4.32v-6.73h3.38L16.98 13h-3.92V10.1c0-1.24.33-2 2.06-2Z"/></svg>',
+        'YouTube' => '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.54 3.58 12 3.58 12 3.58s-7.54 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.86.5 9.4.5 9.4.5s7.54 0 9.4-.5a3 3 0 0 0 2.1-2.12A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.55 15.55v-7.1L15.82 12l-6.27 3.55Z"/></svg>',
+        'TikTok' => '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M16.6 5.82a5.65 5.65 0 0 0 3.32 1.06v3.35a8.86 8.86 0 0 1-3.3-.65v6.3A6.12 6.12 0 1 1 10.5 9.76c.36 0 .72.03 1.06.1v3.5a2.72 2.72 0 1 0 1.78 2.55V2h3.26v3.82Z"/></svg>',
+    ];
+
+    return $icons[$name] ?? h($fallback);
+}
 ?>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="topbar">
@@ -72,7 +84,7 @@ function h(string $value): string
             <div class="topline-right">
                 <span class="hide-sm">Síguenos</span>
                 <?php foreach ($socialLinks as $name => $social): ?>
-                    <a class="social-icon" href="<?= h($social['url']) ?>" aria-label="<?= h($name) ?>" rel="noopener" target="_blank"><?= h($social['icon']) ?></a>
+                    <a class="social-icon" href="<?= h($social['url']) ?>" aria-label="<?= h($name) ?>" rel="noopener" target="_blank"><?= social_icon_svg($name, $social['icon']) ?></a>
                 <?php endforeach; ?>
             </div>
         </div>
