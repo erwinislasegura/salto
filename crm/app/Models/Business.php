@@ -13,7 +13,7 @@ class Business
 
     public static function byCategory(int $categoryId, ?string $tag = null): array
     {
-        $sql = 'SELECT b.* FROM crm_businesses b INNER JOIN crm_business_category bc ON bc.business_id = b.id WHERE bc.category_id = ? AND b.is_active = 1';
+        $sql = "SELECT b.* FROM crm_businesses b INNER JOIN crm_business_category bc ON bc.business_id = b.id WHERE bc.category_id = ? AND b.is_active = 1 AND b.status = 'aceptado'";
         $params = [$categoryId];
         if ($tag) {
             $sql .= ' AND FIND_IN_SET(?, REPLACE(b.tags, ", ", ","))';
@@ -55,18 +55,28 @@ class Business
     public static function create(array $data): void
     {
         $db = Database::connection();
-        $statement = $db->prepare('INSERT INTO crm_businesses (name, slug, summary, description, image, phone, whatsapp, address, map_url, tags, is_featured, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $statement = $db->prepare('INSERT INTO crm_businesses (name, slug, summary, description, image, phone, whatsapp, address, map_url, tags, contact_name, contact_email, instagram, plan_interest, status, is_featured, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $statement->execute(self::values($data));
         self::syncCategories((int) $db->lastInsertId(), $data['category_ids'] ?? []);
     }
 
     public static function update(int $id, array $data): void
     {
-        $statement = Database::connection()->prepare('UPDATE crm_businesses SET name = ?, slug = ?, summary = ?, description = ?, image = ?, phone = ?, whatsapp = ?, address = ?, map_url = ?, tags = ?, is_featured = ?, is_active = ? WHERE id = ?');
+        $statement = Database::connection()->prepare('UPDATE crm_businesses SET name = ?, slug = ?, summary = ?, description = ?, image = ?, phone = ?, whatsapp = ?, address = ?, map_url = ?, tags = ?, contact_name = ?, contact_email = ?, instagram = ?, plan_interest = ?, status = ?, is_featured = ?, is_active = ? WHERE id = ?');
         $values = self::values($data);
         $values[] = $id;
         $statement->execute($values);
         self::syncCategories($id, $data['category_ids'] ?? []);
+    }
+
+    public static function updateStatus(int $id, string $status): void
+    {
+        $allowed = ['nueva_solicitud', 'en_revision', 'aceptado', 'rechazado'];
+        if (!in_array($status, $allowed, true)) {
+            $status = 'en_revision';
+        }
+        $statement = Database::connection()->prepare("UPDATE crm_businesses SET status = ?, is_active = IF(? = 'aceptado', 1, is_active) WHERE id = ?");
+        $statement->execute([$status, $status, $id]);
     }
 
     public static function delete(int $id): void
@@ -100,6 +110,11 @@ class Business
             trim($data['address'] ?? ''),
             trim($data['map_url'] ?? ''),
             trim($data['tags'] ?? ''),
+            trim($data['contact_name'] ?? ''),
+            trim($data['contact_email'] ?? ''),
+            trim($data['instagram'] ?? ''),
+            trim($data['plan_interest'] ?? ''),
+            in_array($data['status'] ?? 'nueva_solicitud', ['nueva_solicitud', 'en_revision', 'aceptado', 'rechazado'], true) ? $data['status'] : 'nueva_solicitud',
             isset($data['is_featured']) ? 1 : 0,
             isset($data['is_active']) ? 1 : 0,
         ];

@@ -88,3 +88,12 @@ INSERT IGNORE INTO crm_business_category (business_id, category_id)
 SELECT b.id, c.id FROM crm_businesses b JOIN crm_categories c ON c.slug = 'experiencias' WHERE b.slug = 'experiencias-rio-laja';
 INSERT IGNORE INTO crm_business_category (business_id, category_id)
 SELECT b.id, c.id FROM crm_businesses b JOIN crm_categories c ON c.slug = 'que-visitar' WHERE b.slug = 'miradores-saltos-del-laja';
+
+ALTER TABLE crm_businesses
+    ADD COLUMN IF NOT EXISTS contact_name VARCHAR(140) NULL AFTER tags,
+    ADD COLUMN IF NOT EXISTS contact_email VARCHAR(160) NULL AFTER contact_name,
+    ADD COLUMN IF NOT EXISTS instagram VARCHAR(120) NULL AFTER contact_email,
+    ADD COLUMN IF NOT EXISTS plan_interest VARCHAR(120) NULL AFTER instagram,
+    ADD COLUMN IF NOT EXISTS status ENUM('nueva_solicitud', 'en_revision', 'aceptado', 'rechazado') NOT NULL DEFAULT 'nueva_solicitud' AFTER plan_interest;
+
+UPDATE crm_businesses SET status = 'aceptado', is_active = 1 WHERE status = 'nueva_solicitud' AND is_featured = 1;

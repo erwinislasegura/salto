@@ -48,6 +48,13 @@ class BusinessesController extends Controller
         $this->redirect('businesses');
     }
 
+    public function status(): void
+    {
+        Auth::requireLogin();
+        Business::updateStatus((int) ($_POST['id'] ?? 0), $_POST['status'] ?? 'en_revision');
+        $this->redirect('businesses');
+    }
+
     public function delete(): void
     {
         Auth::requireLogin();

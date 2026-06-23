@@ -5,6 +5,7 @@
     <section class="crm-card crm-form-section"><div class="crm-form-title"><span>01</span><div><h2>Ficha comercial</h2><p>Datos principales que se mostrarán en la tarjeta pública.</p></div></div><div class="row g-3">
         <div class="col-md-5"><label class="form-label">Nombre</label><input class="form-control" name="name" value="<?= crm_h($business['name'] ?? '') ?>" required></div>
         <div class="col-md-4"><label class="form-label">Slug</label><input class="form-control" name="slug" value="<?= crm_h($business['slug'] ?? '') ?>" required></div>
+        <div class="col-md-3"><label class="form-label">Estado solicitud</label><select class="form-select" name="status"><option value="nueva_solicitud" <?= ($business['status'] ?? 'nueva_solicitud') === 'nueva_solicitud' ? 'selected' : '' ?>>Nueva solicitud</option><option value="en_revision" <?= ($business['status'] ?? '') === 'en_revision' ? 'selected' : '' ?>>En revisión</option><option value="aceptado" <?= ($business['status'] ?? '') === 'aceptado' ? 'selected' : '' ?>>Aceptado</option><option value="rechazado" <?= ($business['status'] ?? '') === 'rechazado' ? 'selected' : '' ?>>Rechazado</option></select></div>
         <div class="col-md-3"><label class="form-label">Ruta imagen actual</label><input class="form-control" name="image" value="<?= crm_h($image) ?>"></div>
         <div class="col-md-8"><label class="form-label">Subir imagen de tarjeta</label><input class="form-control" type="file" name="image_file" accept="image/*"><small class="text-muted">La imagen subida reemplaza la ruta actual.</small></div>
         <div class="col-md-4"><?php if ($image): ?><img class="crm-image-preview" src="../<?= crm_h($image) ?>" alt="Vista previa comercio"><?php endif; ?></div>
@@ -12,9 +13,13 @@
         <div class="col-12"><label class="form-label">Descripción</label><textarea class="form-control" name="description" rows="3"><?= crm_h($business['description'] ?? '') ?></textarea></div>
     </div></section>
     <section class="crm-card crm-form-section"><div class="crm-form-title"><span>02</span><div><h2>Contacto y ubicación</h2><p>Datos para botones de WhatsApp y cómo llegar.</p></div></div><div class="row g-3">
+        <div class="col-md-4"><label class="form-label">Encargado</label><input class="form-control" name="contact_name" value="<?= crm_h($business['contact_name'] ?? '') ?>"></div>
+        <div class="col-md-4"><label class="form-label">Correo encargado</label><input class="form-control" type="email" name="contact_email" value="<?= crm_h($business['contact_email'] ?? '') ?>"></div>
         <div class="col-md-4"><label class="form-label">WhatsApp</label><input class="form-control" name="whatsapp" value="<?= crm_h($business['whatsapp'] ?? '') ?>" placeholder="56900000000"></div>
         <div class="col-md-4"><label class="form-label">Teléfono</label><input class="form-control" name="phone" value="<?= crm_h($business['phone'] ?? '') ?>"></div>
         <div class="col-md-4"><label class="form-label">Dirección</label><input class="form-control" name="address" value="<?= crm_h($business['address'] ?? '') ?>"></div>
+        <div class="col-md-4"><label class="form-label">Instagram</label><input class="form-control" name="instagram" value="<?= crm_h($business['instagram'] ?? '') ?>"></div>
+        <div class="col-md-4"><label class="form-label">Plan de interés</label><input class="form-control" name="plan_interest" value="<?= crm_h($business['plan_interest'] ?? '') ?>"></div>
         <div class="col-12"><label class="form-label">URL mapa</label><input class="form-control" name="map_url" value="<?= crm_h($business['map_url'] ?? '') ?>"></div>
     </div></section>
     <section class="crm-card crm-form-section"><div class="crm-form-title"><span>03</span><div><h2>Categorías y tags</h2><p>Un comercio puede aparecer en varias páginas y filtrarse por tags.</p></div></div><div class="row g-3">
